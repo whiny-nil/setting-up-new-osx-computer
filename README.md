@@ -90,10 +90,13 @@ Setup New macOS Computer
   - `alias mkpw="openssl rand -base64 14" # make a password`
 
 * configure git to use three-way diff
- - `git config --global merge.conflictstyle diff3`
+  - `git config --global merge.conflictstyle diff3`
 
 * install tldr
   - https://tldr.sh/
 
 * install thefuck
   - `brew install thefuck`
+
+* set up locate db
+  - `sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist`
