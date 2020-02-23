@@ -66,6 +66,10 @@ Setup New macOS Computer
 	- brew install postgresql
 	- http://exponential.io/blog/2015/02/21/install-postgresql-on-mac-os-x-via-brew/
 
+* Install a decent pager for postgres
+  - https://github.com/okbob/pspg
+  - configure it with a good colour scheme!
+
 * Install pgadmin
 
 * Install Slack app
