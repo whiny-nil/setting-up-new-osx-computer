@@ -17,6 +17,7 @@ Setup New macOS Computer
 * Download iTerm2
 	- use Solarized Dark colours
 	- change the highlight colour (see images)
+  - also, change the "Black" colour to something like blue (so black text shows up)
 
 * Create ~/__GTD__/__Inbox__ dir
 
