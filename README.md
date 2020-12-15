@@ -12,6 +12,7 @@ Setup New macOS Computer
 	- System Preferences -> Keyboard -> Modifier Keys... 
 
 * Download new browser (Firefox)
+	- set as default in System Preferences -> General
 	- Install LastPass extension
 	- Install uBlock Origin
 
@@ -32,6 +33,11 @@ Setup New macOS Computer
 
 * Install commandline tools
 	- just try running `git` and it will ask you to install commandline tools
+
+* Configure git
+	- `git config --global user.name "Your Name"`
+	- `git config --global user.email you@example.com`
+  - `git config --global merge.conflictstyle diff3`
 
 * Install oh-my-zsh
 	- see https://github.com/robbyrussell/oh-my-zsh
@@ -73,9 +79,6 @@ Setup New macOS Computer
 
 * add a "mkpw" alias to zshrc
   - `alias mkpw="openssl rand -base64 14" # make a password`
-
-* configure git to use three-way diff
-  - `git config --global merge.conflictstyle diff3`
 
 * install tldr
   - https://tldr.sh/
