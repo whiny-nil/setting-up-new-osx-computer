@@ -8,6 +8,9 @@ Setup New macOS Computer
 
 * Change trackpad scroll direction
 
+* Map "Caps Lock" key to "Escape" if computer doesn't have one
+	- System Preferences -> Keyboard -> Modifier Keys... 
+
 * Download new browser (Firefox)
 	- Install LastPass extension
 	- Install uBlock Origin
@@ -40,6 +43,7 @@ Setup New macOS Computer
 	`brew install neovim`
 
 * Add keyboard shortcut for zooming app
+	- System Preferences -> Keyboard -> Shortcuts -> App Shortcuts -> +
 
 * Create ~/code dir
 
@@ -53,35 +57,11 @@ Setup New macOS Computer
 * Install my custom .zshrc
 	- both of these could use some attention, but they are good enough for now
 
-* Install rbenv
-	- brew install rbenv
-	- rbenv init
-
-* Install nvm
-	- https://github.com/creationix/nvm
-
-* Install yarn
-	- brew install yarn
-
-* Install postgres
-	- brew install postgresql
-	- http://exponential.io/blog/2015/02/21/install-postgresql-on-mac-os-x-via-brew/
-
-* Install a decent pager for postgres
-  - https://github.com/okbob/pspg
-  - configure it with a good colour scheme!
-
-* Install pgadmin
-
-* Install Slack app
-
-* Install Atom, hook up plugin/settings dirs to my github repo
+* Install VSCode, set it up (see other doc in this repo for that)
 
 * Install Tomighty
   - http://tomighty.org/ or
   - https://www.macupdate.com/app/mac/49635/tomighty#<Paste>
-
-* Create a Trello board for ToDos
 
 * Change tab in TextEdit
 	- `defaults write com.apple.TextEdit "TabWidth" '2'`
@@ -105,3 +85,26 @@ Setup New macOS Computer
 
 * set up locate db
   - `sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist`
+
+* Install rbenv (optional)
+	- brew install rbenv
+	- rbenv init
+
+* Install nvm (optional)
+	- https://github.com/creationix/nvm
+	- make sure it runs `nvm use` automatically: https://github.com/nvm-sh/nvm#zsh
+
+* Install yarn (optional)
+	- brew install yarn
+
+* Install postgres (optional)
+	- brew install postgresql
+	- http://exponential.io/blog/2015/02/21/install-postgresql-on-mac-os-x-via-brew/
+
+* Install a decent pager for postgres (optional)
+  - https://github.com/okbob/pspg
+  - configure it with a good colour scheme!
+
+* Install pgadmin (optional)
+
+* Install Slack app (optional)
