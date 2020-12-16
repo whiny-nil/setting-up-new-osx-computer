@@ -17,3 +17,7 @@ Setting up VSCode
 * Install Quit Control
 * Install Auto Close Tag
 * Install Auto Rename Tag
+* Update the terminal settings (search for settings.json in the preference search):
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.fontFamily": "Monaco",
+  "terminal.integrated.lineHeight": 1
