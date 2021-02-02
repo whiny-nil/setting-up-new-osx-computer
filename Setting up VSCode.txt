@@ -21,3 +21,7 @@ Setting up VSCode
   "terminal.integrated.fontSize": 14,
   "terminal.integrated.fontFamily": "Monaco",
   "terminal.integrated.lineHeight": 1
+* Turn off the "auto complete on enter" setting
+  - go to settings and search for "enter"
+* Add rulers for 80 and 120
+  - go to settings and search for "rulers"
