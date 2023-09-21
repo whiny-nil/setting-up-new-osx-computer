@@ -2,6 +2,13 @@
 
 - Change trackpad scroll direction
 
+- if using LG Keyboard
+
+  - install LG Hub
+  - Allow the app in Privacy & sEcurity > Accessibility
+  - in Keyboard > Keyboard shortcuts > Modifier keys, swap "Option" and "Command" keys
+  - in LG Hub, select keyboard colour and "swap function" option
+
 - Change Dock
 
   - move it to the side
