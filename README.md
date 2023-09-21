@@ -171,7 +171,9 @@
   - draw.io.app
   - yEd.app
 
-- withokta?
+- withokta
+
+  - https://textnow.atlassian.net/wiki/spaces/SRE/pages/13154845410/Okta+SSO+withokta
 
 - run OneDrive to set up
 
@@ -208,7 +210,6 @@ brew install yarn
 brew install shared-mime-info
 brew uninstall postgres
 brew install postgres
-brew install --cask notunes
 brew install awscli
 brew install tree
 brew install ack
@@ -223,14 +224,3 @@ brew install jdxcode/tap/rtx
 brew install starship
 brew install kustomize
 brew install argoc
-
-```
-
-```
-
-```
-
-
-TODO:
-	- export iTerm profile, add to this repo
-```
