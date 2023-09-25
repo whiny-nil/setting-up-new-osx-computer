@@ -9,6 +9,20 @@
   - in Keyboard > Keyboard shortcuts > Modifier keys, swap "Option" and "Command" keys
   - in LG Hub, select keyboard colour and "swap function" option
 
+- In "Mission Control" setting, uncheck "displays have separate spaces"
+
+  - basically, make sure everything in here is unchecked
+
+- Turn off transparent menubar
+
+  - Accessibility > Display > Reduce transparencies
+
+- Update mouse tracking and scrolling
+
+- prevent computer from sleeping when display is off:
+
+  - https://osxdaily.com/2023/01/02/how-prevent-mac-sleeping-when-display-is-off/
+
 - Change Dock
 
   - move it to the side
@@ -108,6 +122,12 @@
 - install starship (brew install starship)
 
   - copy config from dotfiles repo
+
+- need to map `python3` command to `python`
+
+  - did this by copying the python3 symlink to `python`
+  - 🦑🦑🦑 : cd /opt/homebrew/bin
+  - 🦑🦑🦑 : cp python3 python
 
 - install rtx (brew install rtx)
 
