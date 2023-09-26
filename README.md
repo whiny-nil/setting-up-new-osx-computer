@@ -1,60 +1,67 @@
 # Setup New macOS Computer
 
-- Change trackpad scroll direction
+## FIRST THINGS FIRST
 
-- if using LG Keyboard
+- On your old computer, clone this repo
+- Look at each of the files in the config folder and update them if they haven't been already
+- PUSH TO ORIGIN
+- go through all of your work repos, make sure your work / branches are pushed
+- think about all the stuff you use, including:
+  - things installed via brew (check with `brew list` or `history | grep "brew install"`)
+  - things installed in /Applications
+
+## Setting up your new computer:
+
+- if using LG Keyboard:
 
   - install LG Hub
-  - Allow the app in Privacy & sEcurity > Accessibility
+  - Allow the app in Privacy & Security > Accessibility
   - in Keyboard > Keyboard shortcuts > Modifier keys, swap "Option" and "Command" keys
   - in LG Hub, select keyboard colour and "swap function" option
 
-- In "Mission Control" setting, uncheck "displays have separate spaces"
+- Update Finder settings:
 
-  - basically, make sure everything in here is unchecked
-
-- Turn off transparent menubar
-
-  - Accessibility > Display > Reduce transparencies
-
-- Update mouse tracking and scrolling
-
-- prevent computer from sleeping when display is off:
-
-  - https://osxdaily.com/2023/01/02/how-prevent-mac-sleeping-when-display-is-off/
-
-- Change Dock
-
-  - move it to the side
-  - change icon size (smallish) and magnification (max)
-  - have it hide automatically
-  - remove all the apps
-
-- Map "Caps Lock" key to "Escape" if computer doesn't have one
-
-  - System Preferences -> Keyboard -> Modifier Keys...
-
-- Make keys repeat better
-
-  - Sys Pref, -> keyboard -> Key Repeat: Fastest, Delay: shortest
+  - General: Uncheck everything
+  - General > New Finder Windows show: marc.kelsey folder
+  - Sidebar: Only check: Documents, marc.kelsey, Hard disks, External disks, CDs etc, Connected servers
+  - Advanced > Show all filename extensions: Checked
+  - Set Finder to always open in Column view:
+    - Open a Finder window
+    - Click on "Macintosh HD"
+    - In one of the columns, right-click and choose "Show view options"
+    - Check "Always open in Column view" and "Browse in column view"
 
 - Create `~/__GTD__/__Inbox__` dir
 
-- Update Finder settings:
-
-```
-	- General: uncheck everything
-					 : New Finder Windows show: marc.kelsey folder
-	- Sidebar: Only check: Documents, marc.kelsey, Hard disks, External disks, CDs etc, Connected servers
-	- Advanced > Show all filename extensions: Checked
-	- always open in column view
-```
-
 - Download new browser (Firefox)
 
-  - set as default in System Preferences -> General
-  - Point Downloads to `~/__GTD__/__Inbox__` (FF settings)
-  - sync your Firefox account
+  - set as default in System Preferences > Desktop & Dock > Windows & Apps > Default web browser
+  - Point Downloads to `~/__GTD__/__Inbox__` in Firefox settings
+  - sync your Firefox account to update extensions, themes, etc
+
+- Change some of the macOS System Settings:
+
+  - Trackpad > Scroll & Zoom > Natural scrolling: Turn off
+  - Desktop & Dock > Mission Control > Automatically rearrange Spaces: Turn off
+  - Desktop & Dock > Mission Control > Switch to space with open windows: Turn off
+  - Desktop & Dock > Mission Control > Group windows by application: Turn off
+  - Desktop & Dock > Mission Control > Displays have separate spaces: Turn off
+  - Mouse > Tracking speed: Increase to max
+  - Mouse > Natural scrolling: Turn off
+  - Mouse > Double-click speed: Increase
+  - Mouse > Scrolling Speed: Increase
+  - Displays > Advanced> Prevent automatic sleeping: Turn on
+  - Desktop & Dock > Dock: Set size to mid
+  - Desktop & Dock > Dock: Magnification: Set to max
+  - Desktop & Dock > Dock: Position on screen: Set to left or right
+  - Desktop & Dock > Dock: Automatically hide: Turn on
+  - Keyboard > Key repeat rate: Set to fastest
+  - Keyboard > Delay until repeat: Set to shortest
+  - Keyboard > Shortcuts > App Shortcuts: Map Ctrl+Alt+Command+/ to "Zoom"
+  - Keyboard > Shortcuts > App Shortcuts: Map Ctrl+Alt+Command+-> to "Move to <monitor on the right>" (see Window section in Menu Bar)
+  - Keyboard > Shortcuts > App Shortcuts: Map Ctrl+Alt+Command+-> to "Move to <monitor on the left>" (see Window section in Menu Bar)
+
+- Remove all the apps from the Dock
 
 - Download Alfred
 
@@ -62,26 +69,7 @@
 
 - Download iTerm2
 
-  - install profile from dotfiles repo
-
-  - Update Preferences:
-
-  ```
-  	- Appearance	> General > Theme: Minimal
-  													> Status bar location: Bottom
-  	- Profiles	> General	> Icon: Built-in Icon for Current App
-  												> Working Directory: Reuse previous session's...
-  							> Colors	> Color Presets...: Pastel (Dark Background)
-  							> Text	> Cursor: Vertical Bar
-  											> Blinking cursor: Checked
-  											> Use built-in Powerline Glyphs: Checked
-  											> Font: FantasqueSansM Nerd Font, Regular, 20, 102, 100
-  							> Terminal 	> Scrollback buffer: Unlimited
-  							> Session	> Status Bar Enabled: Checked
-  												> Configure status Bar: Add "Search"
-  	- Advanced 	> Mouse 	> Scroll wheels send arrows...: Yes
-  							> Terminal 	> Prevent CSI...: No
-  ```
+  - install profile from dotfiles directory
 
 - Install commandline tools
 
@@ -107,51 +95,30 @@
 
 - Install custom zsh-theme
 
-  - in dotfiles repo, could move here?
+  - look in dotfiles directory
 
 - Install my custom .zshrc
 
-  - in dotfiles repo, could move here?
-
-  - both of these could use some attention, but they are good enough for now
+  - look in dotfiles directory
 
 - Install homebrew
 
   - see https://brew.sh/
 
-- install starship (brew install starship)
+- `brew install` some stuff:
 
-  - copy config from dotfiles repo
-
-- need to map `python3` command to `python`
-
-  - did this by copying the python3 symlink to `python`
-  - 🦑🦑🦑 : cd /opt/homebrew/bin
-  - 🦑🦑🦑 : cp python3 python
-
-- install rtx (brew install rtx)
-
-- install tldr (brew install tldr)
-
-  - https://tldr.sh/
-
-- install thefuck
-
-  - `brew install thefuck`
+  - starship (copy config from dotfiles directory)
+  - tree
+  - rtx
+  - tldr (https://tldr.sh/)
+  - thefuck
+  - rg
+  - neovim (I really should configure it at some point...)
+  - meld (file diff)
 
 - set up locate db
 
   - `sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist`
-
-- Install neovim
-  `brew install neovim`
-
-  - Configure neovim at some point
-
-- Add keyboard shortcuts:
-
-  - for zooming app: System Preferences -> Keyboard -> Shortcuts -> App Shortcuts -> +
-  - for moving apps to second monitor
 
 - Install VSCode, set it up
 
@@ -189,16 +156,7 @@
   - git config --global init.defaultbranch main
   - git config --global pull.rebase false
 
-- install some apps, as you need them:
-
-  - DiffMerge.app
-  - Docker.app
-  - LibreOffice.app
-  - VirtualBox.app
-  - draw.io.app
-  - yEd.app
-
-- withokta
+- Set up `withokta`
 
   - https://textnow.atlassian.net/wiki/spaces/SRE/pages/13154845410/Okta+SSO+withokta
 
@@ -207,47 +165,34 @@
 - go to outlook.office.com/mail
 - go to outlook.office.com/calendar
 
-- run slack to set up
+- run Slack to set up
 
-- run /zoom in slack to set up
+- run /zoom in Slack to set up
 
-- Install postgres (optional)
+  - make sure to "Share Screen" before you do a real meeting, since it requires turning on Permissions and restarting Zoom
 
-  - brew install postgresql
+- install some apps, as you need them:
+
+  - Docker.app
+  - LibreOffice.app
+  - VirtualBox.app
+  - draw.io.app
+  - yEd.app
+  - Slack.app
+  - Zoom.app
+
+- `brew install` some things, as you need them:
+
+- postgresql
+
   - http://exponential.io/blog/2015/02/21/install-postgresql-on-mac-os-x-via-brew/
 
-- Install a decent pager for postgres (optional)
+- pspg (a decent pager for postgres)
 
   - https://github.com/okbob/pspg
   - configure it with a good colour scheme!
 
-- Install pgadmin (optional)
-
-🦑🦑🦑 : history | gr "brew install"
-brew install pspg
-brew install rbenv/tap/openssl@1.0
-brew install v8@3.16.14.15
-brew install v8@3.16
-brew uninstall rbenv/tap/openssl@1.0
-brew uninstall v8@3.15
-brew install openssl
-brew install mysql@5.7
-brew install v8@3.15
-brew install yarn
-brew install shared-mime-info
-brew uninstall postgres
-brew install postgres
-brew install awscli
-brew install tree
-brew install ack
-brew install tldr
-brew install swiftdefaultappsprefpane
-brew install rg
-brew install protobuf
-brew install shfmt
-brew install minikube
-brew install gitk
-brew install jdxcode/tap/rtx
-brew install starship
-brew install kustomize
-brew install argoc
+- pgadmin
+- protobuf (needed for working with protobufs in various repos)
+- shfmt (needed for `textnow-ci`)
+- minikube, kustomize, argocd (needed for working with k8s stuff)
