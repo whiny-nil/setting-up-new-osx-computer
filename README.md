@@ -42,7 +42,6 @@
 - Change some of the macOS System Settings:
 
   - Software Update > Automatic updates: Turn off anything that auto-installs
-
   - Desktop & Dock > Dock: Set size to mid
   - Desktop & Dock > Dock: Magnification: Set to max
   - Desktop & Dock > Dock: Position on screen: Set to left or right
@@ -51,20 +50,16 @@
   - Desktop & Dock > Mission Control > Switch to space with open windows: Turn off
   - Desktop & Dock > Mission Control > Group windows by application: Turn off
   - Desktop & Dock > Mission Control > Displays have separate spaces: Turn off
-
   - Displays > Advanced> Prevent automatic sleeping: Turn on
-
   - Keyboard > Key repeat rate: Set to fastest
   - Keyboard > Delay until repeat: Set to shortest
   - Keyboard > Shortcuts > App Shortcuts: Map Ctrl+Alt+Command+/ to "Zoom"
   - Keyboard > Shortcuts > App Shortcuts: Map Ctrl+Alt+Command+-> to "Move to <monitor on the right>" (see Window section in Menu Bar)
   - Keyboard > Shortcuts > App Shortcuts: Map Ctrl+Alt+Command+-> to "Move to <monitor on the left>" (see Window section in Menu Bar)
-
   - Mouse > Tracking speed: Increase to max
   - Mouse > Natural scrolling: Turn off
   - Mouse > Double-click speed: Increase
   - Mouse > Scrolling Speed: Increase
-
   - Trackpad > Scroll & Zoom > Natural scrolling: Turn off
 
 - Remove all the apps from the Dock
