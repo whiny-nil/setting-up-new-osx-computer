@@ -64,6 +64,17 @@
   - Mouse > Scrolling Speed: Increase
   - Trackpad > Scroll & Zoom > Natural scrolling: Turn off
 
+- Turn off annoying "Text Insertion Point"
+
+  - open terminal, then:
+
+  ```
+  sudo mkdir -p /Library/Preferences/FeatureFlags/Domain
+  sudo /usr/libexec/PlistBuddy -c "Add 'redesigned_text_cursor:Enabled' bool false" /Library/Preferences/FeatureFlags/Domain/UIKit.plist
+  ```
+
+  - reboot
+
 - Remove all the apps from the Dock
 
 - Download Alfred
