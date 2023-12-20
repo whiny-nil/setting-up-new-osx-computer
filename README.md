@@ -42,6 +42,8 @@
 - Change some of the macOS System Settings:
 
   - Software Update > Automatic updates: Turn off anything that auto-installs
+  - Desktop & Dock > Desktop & Stage Manager: Change "Click wallpaper to reveal desktop" to "Only in Stage Manager"
+  - Desktop & Dock > Desktop & Stage Manager: Make sure "Stage Manager" is off
   - Desktop & Dock > Dock: Set size to mid
   - Desktop & Dock > Dock: Magnification: Set to max
   - Desktop & Dock > Dock: Position on screen: Set to left or right
