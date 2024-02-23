@@ -3,8 +3,9 @@
 ## FIRST THINGS FIRST
 
 - On your old computer, clone this repo
-- Look at each of the files in the config folder and update them if they haven't been already
+- Look at each of the files in the dotfiles/config folder and update them if they haven't been already
 - PUSH TO ORIGIN
+- copy your ~/.zsh_history folder to a USB stick or something, so you can move it to your new computer
 - go through all of your work repos, make sure your work / branches are pushed
 - think about all the stuff you use, including:
   - things installed via brew (check with `brew list` or `history | grep "brew install"`)
@@ -84,6 +85,7 @@
 - Download iTerm2
 
   - install profile from dotfiles directory
+  - copy .zsh_history file (from your USB stick or whatever) into your user directory
 
 - Install commandline tools
 
