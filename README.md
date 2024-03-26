@@ -78,7 +78,12 @@
 
 - Remove all the apps from the Dock
 
-- Download Alfred
+- Install raycast (Alfred alternative)
+
+  - `brew install raycast`
+  - during setup, set "ctrl-space" as the hotkey
+  - have it replace Spotlight
+  - use dark mode
 
 - Download and install FantasqueSansM Nerd Font (https://www.nerdfonts.com/font-downloads)
 
