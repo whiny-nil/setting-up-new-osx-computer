@@ -78,6 +78,10 @@
 
 - Remove all the apps from the Dock
 
+- Install homebrew
+
+  - see https://brew.sh/
+
 - Install raycast (Alfred alternative)
 
   - `brew install raycast`
@@ -110,7 +114,7 @@
 
 - Generate ssh key
 
-  - https://docs.joyent.com/public-cloud/getting-started/ssh-keys/generating-an-ssh-key-manually/manually-generating-your-ssh-key-in-mac-os-x
+  - https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
 
 - Add key to github, bitbucket
 
@@ -122,20 +126,15 @@
 
   - look in dotfiles directory
 
-- Install homebrew
-
-  - see https://brew.sh/
-
 - `brew install` some stuff:
 
   - starship (copy config from dotfiles directory)
   - tree
-  - rtx
+  - mise
   - tldr (https://tldr.sh/)
   - thefuck
-  - rg
   - neovim (I really should configure it at some point...)
-  - meld (file diff)
+  - kdiff3
 
 - set up locate db
 
