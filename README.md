@@ -56,6 +56,7 @@
   - Displays > Advanced> Prevent automatic sleeping: Turn on
   - Keyboard > Key repeat rate: Set to fastest
   - Keyboard > Delay until repeat: Set to shortest
+  - Keyboard > Input Sources > Edit > Turn "Add period with double space" off
   - Keyboard > Shortcuts > App Shortcuts: Map Ctrl+Alt+Command+/ to "Zoom"
   - Keyboard > Shortcuts > App Shortcuts: Map Ctrl+Alt+Command+-> to "Move to <monitor on the right>" (see Window section in Menu Bar)
   - Keyboard > Shortcuts > App Shortcuts: Map Ctrl+Alt+Command+-> to "Move to <monitor on the left>" (see Window section in Menu Bar)
