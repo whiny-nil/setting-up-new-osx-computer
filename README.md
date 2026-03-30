@@ -5,23 +5,29 @@
 - On your old computer, clone this repo
 - Look at each of the files in the dotfiles/config folder and update them if they haven't been already
 - PUSH TO ORIGIN
-- copy your ~/.zsh_history folder to a USB stick or something, so you can move it to your new computer
+- copy some files to a USB stick or something, so you can move them to your new computer. Places to look:
+  - dotfiles in your home directory, eg. .cursor, .zsh\*, etc.
+    - note: copying .cursor takes _forever_
+  - **GTD** folder
+  - Documents folder
+  - Pictures folder
+  - sample files you use (PDFs, pictures etc)
+  - scripts
 - go through all of your work repos, make sure your work / branches are pushed
 - think about all the stuff you use, including:
   - things installed via brew (check with `brew list` or `history | grep "brew install"`)
   - things installed in /Applications
+  - you can list these and redirect them to a file, then copy that onto your USB stick
 
 ## Setting up your new computer:
 
 - if using LG Keyboard:
-
   - install LG Hub
   - Allow the app in Privacy & Security > Accessibility
   - in Keyboard > Keyboard shortcuts > Modifier keys, swap "Option" and "Command" keys
   - in LG Hub, select keyboard colour and "swap function" option
 
 - Update Finder settings:
-
   - General: Uncheck everything
   - General > New Finder Windows show: marc.kelsey folder
   - Sidebar: Only check: Documents, marc.kelsey, Hard disks, External disks, CDs etc, Connected servers
@@ -35,14 +41,13 @@
 - Create `~/__GTD__/__Inbox__` dir
 
 - Download new browser (Firefox)
-
   - set as default in System Preferences > Desktop & Dock > Windows & Apps > Default web browser
   - Point Downloads to `~/__GTD__/__Inbox__` in Firefox settings
   - sync your Firefox account to update extensions, themes, etc
 
 - Change some of the macOS System Settings:
-
-  - Software Update > Automatic updates: Turn off anything that auto-installs
+  - Battery > Options> Prevent automatic sleeping: Turn on
+  - General > Software Update > Automatic updates: Turn off anything that auto-installs
   - Desktop & Dock > Desktop & Stage Manager: Change "Click wallpaper to reveal desktop" to "Only in Stage Manager"
   - Desktop & Dock > Desktop & Stage Manager: Make sure "Stage Manager" is off
   - Desktop & Dock > Dock: Set size to mid
@@ -53,7 +58,6 @@
   - Desktop & Dock > Mission Control > Switch to space with open windows: Turn off
   - Desktop & Dock > Mission Control > Group windows by application: Turn off
   - Desktop & Dock > Mission Control > Displays have separate spaces: Turn off
-  - Displays > Advanced> Prevent automatic sleeping: Turn on
   - Keyboard > Key repeat rate: Set to fastest
   - Keyboard > Delay until repeat: Set to shortest
   - Keyboard > Input Sources > Edit > Turn "Add period with double space" off
@@ -67,7 +71,6 @@
   - Trackpad > Scroll & Zoom > Natural scrolling: Turn off
 
 - Turn off annoying "Text Insertion Point"
-
   - open terminal, then:
 
   ```
@@ -80,11 +83,9 @@
 - Remove all the apps from the Dock
 
 - Install homebrew
-
   - see https://brew.sh/
 
 - Install raycast (Alfred alternative)
-
   - `brew install raycast`
   - during setup, set "ctrl-space" as the hotkey
   - have it replace Spotlight
@@ -92,62 +93,57 @@
 
 - Download and install FantasqueSansM Nerd Font (https://www.nerdfonts.com/font-downloads)
 
-- Download iTerm2
-
-  - install profile from dotfiles directory
-  - copy .zsh_history file (from your USB stick or whatever) into your user directory
+- install cmux
+  - open Ghostty settings, add font-family = FantasqueSansM, font-size = 18
+  - or, copy from ~/.config/ghostty/config
 
 - Install commandline tools
-
   - just try running `git` and it will ask you to install commandline tools
 
-- Configure git
-
+- Configure git (or copy from ~/.gitconfig, .gitignore_global)
   - `git config --global user.name "Your Name"`
   - `git config --global user.email you@example.com`
   - `git config --global merge.conflictstyle diff3`
 
 - Install oh-my-zsh
-
   - see https://github.com/robbyrussell/oh-my-zsh
 
 - Create ~/code dir
 
 - Generate ssh key
-
   - https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
 
 - Add key to github, bitbucket
+  - For TN, need to configure SSO as well (after adding to GH, there is a button on the right of the key)
 
-- Install custom zsh-theme
-
+- DEPRECATED??: Install custom zsh-theme
+  - need to install it or oh-my-zsh goes nuts, but I think the prompt is overwritten by starship anyway
   - look in dotfiles directory
 
 - Install my custom .zshrc
-
   - look in dotfiles directory
 
 - `brew install` some stuff:
-
-  - starship (copy config from dotfiles directory)
+  - starship (copy config from dotfiles directory into ~/.config/starship.toml)
   - tree
   - mise
   - tldr (https://tldr.sh/)
   - thefuck
   - neovim (I really should configure it at some point...)
   - kdiff3
+  - noTunes (then set to "Open at Login" in System Settings)
 
 - set up locate db
-
   - `sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist`
 
-- Install VSCode, set it up
-
+- DEPRECATED: Install VSCode, set it up
   - just need to sync it (https://code.visualstudio.com/docs/editor/settings-sync)
   - delete other file
 
-- Install Obsidian, set it up
+- install Cursor, set it up
+  - copy over .cursor from old computer
 
+- Install Obsidian, set it up
   - create new vault called "obsidian" in `~/code/github.com/whiny-nil`
   - install Obsidian Git plugin
   - exit obsidian
@@ -156,44 +152,30 @@
   - open Obsidian, it should work
 
 - Change where screenshots are saved
-
   - `defaults write com.apple.screencapture location /Users/marc/__GTD__/__Inbox__`
-
-- Install some apps:
-  - lghub.app
-  - noTunes.app (set to start on login)
 
 ## For TextNow:
 
 - more git configs:
-
   - add file `~/.gitignore_global`
     - add contents of file:
+
     ```
     *~
     .DS_Store
     ```
+
     - git config --global core.excludesfile "/Users/marc.kelsey/.gitignore_global"
+
   - git config --global init.defaultbranch main
   - git config --global pull.rebase false
 
-- Set up `withokta`
-
-  - https://textnow.atlassian.net/wiki/spaces/SRE/pages/13154845410/Okta+SSO+withokta
-
 - run OneDrive to set up
 
-- go to outlook.office.com/mail
-- go to outlook.office.com/calendar
-
-- run Slack to set up
-
-- run /zoom in Slack to set up
-
-  - make sure to "Share Screen" before you do a real meeting, since it requires turning on Permissions and restarting Zoom
+- go to outlook.office.com/mail, pin it
+- go to outlook.office.com/calendar, pin it
 
 - install some apps, as you need them:
-
   - Docker.app
   - LibreOffice.app
   - VirtualBox.app
@@ -202,14 +184,17 @@
   - Slack.app
   - Zoom.app
 
+- run Slack to set up
+
+- run /zoom in Slack to set up
+  - make sure to "Share Screen" before you do a real meeting, since it requires turning on Permissions and restarting Zoom
+
 - `brew install` some things, as you need them:
 
 - postgresql
-
   - http://exponential.io/blog/2015/02/21/install-postgresql-on-mac-os-x-via-brew/
 
 - pspg (a decent pager for postgres)
-
   - https://github.com/okbob/pspg
   - configure it with a good colour scheme!
 
