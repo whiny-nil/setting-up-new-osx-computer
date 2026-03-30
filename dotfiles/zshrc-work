@@ -116,6 +116,9 @@ alias mkpw="openssl rand -base64 14"
 # show all global node modules linked to local versions (for development)
 alias npmlinks="npm ls -g --depth=0 --link=true"
 
+# alias for IDE
+alias c="cursor"
+
 # thefuck
 eval $(thefuck --alias)
 
@@ -125,11 +128,20 @@ eval $(thefuck --alias)
 # update $PATH for binstubs
 PATH="./bin:$PATH"
 
+# update $PATH for my scripts
+PATH="/Users/marc.kelsey/scripts:$PATH"
+
 # update $PATH for mysql-client
-export PATH="/usr/local/opt/mysql-client/bin:$PATH"
+PATH="/usr/local/opt/mysql-client/bin:$PATH"
 
 # update $PATH for composer bin
-export PATH="./vendor/bin:$PATH"
+PATH="./vendor/bin:$PATH"
+
+# update $PATH for textnow-mono development
+PATH=$GOPATH/bin:$PATH
+
+# ... and export it.
+export PATH
 
 # helper for the devSetup.sh script in `textnow-web`
 export NGINX_INSTALLATION=homebrew
@@ -139,8 +151,23 @@ if [ -f "/Users/marc.kelsey/.okta/okta-aws" ]; then
     . "/Users/marc.kelsey/.okta/okta-aws"
 fi
 
-# rtx
-eval "$(rtx activate zsh)"
+# mise (formerly rtx)
+eval "$(mise activate zsh)"
 
 # starship
 eval "$(starship init zsh)"
+
+# cursor cli
+export PATH="$HOME/.local/bin:$PATH"
+
+# add git completion for my git-can-delete alias
+_git-can-delete() {
+    local branches
+    branches=($(git branch | sed 's/^[* ]*//' | grep -i "^$words[CURRENT]"))
+    _describe 'branch' branches
+}
+
+compdef _git-can-delete git-can-delete
+
+# Added by Antigravity
+export PATH="/Users/marc.kelsey/.antigravity/antigravity/bin:$PATH"
