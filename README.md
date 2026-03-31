@@ -19,13 +19,14 @@
   - things installed in /Applications
   - you can list these and redirect them to a file, then copy that onto your USB stick
 
-## Setting up your new computer:
+## Setting up your new computer
 
 - if using LG Keyboard:
   - install LG Hub
   - Allow the app in Privacy & Security > Accessibility
   - in Keyboard > Keyboard shortcuts > Modifier keys, swap "Option" and "Command" keys
   - in LG Hub, select keyboard colour and "swap function" option
+  - restart the computer (so that the keyboard is recognized by LG Hub and the colour is changed)
 
 - Update Finder settings:
   - General: Uncheck everything
@@ -46,6 +47,7 @@
   - sync your Firefox account to update extensions, themes, etc
 
 - Change some of the macOS System Settings:
+  - Appearance > Accent color: Set to red or something
   - Battery > Options> Prevent automatic sleeping: Turn on
   - General > Software Update > Automatic updates: Turn off anything that auto-installs
   - Desktop & Dock > Desktop & Stage Manager: Change "Click wallpaper to reveal desktop" to "Only in Stage Manager"
@@ -68,12 +70,14 @@
   - Mouse > Natural scrolling: Turn off
   - Mouse > Double-click speed: Increase
   - Mouse > Scrolling Speed: Increase
+  - Sound > Input: Change to webcam mic
+  - Sound > Play feedback when volume changed: Turnon
   - Trackpad > Scroll & Zoom > Natural scrolling: Turn off
 
 - Turn off annoying "Text Insertion Point"
   - open terminal, then:
 
-  ```
+  ```bash
   sudo mkdir -p /Library/Preferences/FeatureFlags/Domain
   sudo /usr/libexec/PlistBuddy -c "Add 'redesigned_text_cursor:Enabled' bool false" /Library/Preferences/FeatureFlags/Domain/UIKit.plist
   ```
@@ -90,6 +94,8 @@
   - during setup, set "ctrl-space" as the hotkey
   - have it replace Spotlight
   - use dark mode
+  - on old computer, go into Raycast and "export" settings etc
+  - import into new computer
 
 - Download and install FantasqueSansM Nerd Font (https://www.nerdfonts.com/font-downloads)
 
@@ -136,12 +142,14 @@
 - set up locate db
   - `sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist`
 
-- DEPRECATED: Install VSCode, set it up
-  - just need to sync it (https://code.visualstudio.com/docs/editor/settings-sync)
-  - delete other file
-
 - install Cursor, set it up
   - copy over .cursor from old computer
+  - copy over ~/Library/Application Support/Cursor/User/ from old computer
+  - go through and fix the extensions
+  - change the layout to "Editor" (gear top right)
+  - install the `cursor` command for the terminal
+  - add "FantasqueSansM Nerd Font" as the font
+  - set the font size to something appropriate
 
 - Install Obsidian, set it up
   - create new vault called "obsidian" in `~/code/github.com/whiny-nil`
@@ -153,6 +161,16 @@
 
 - Change where screenshots are saved
   - `defaults write com.apple.screencapture location /Users/marc/__GTD__/__Inbox__`
+
+- Set up desktops
+  - cmd-up to show all the windows, then click on + button on the right side
+  - Keyboard > Shortcuts > Mission Control: Expand "Mission Control" item in list, check the options to move between spaces with ctrl-1, etc
+  - add some backgrounds
+
+## For Me:
+
+- install eqMac, set to run on Login
+- install Spotify
 
 ## For TextNow:
 
