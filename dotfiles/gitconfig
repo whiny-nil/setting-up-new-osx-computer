@@ -1,0 +1,33 @@
+[user]
+	name = Marc Kelsey
+	email = marc.kelsey@gmail.com
+[merge]
+	conflictstyle = diff3
+[core]
+	editor = vim
+	excludesfile = /Users/marc.kelsey/.gitignore_global
+[init]
+	defaultbranch = main
+[pull]
+	rebase = false
+[alias]
+	m = machete
+	tree = log --oneline --graph --all --decorate
+	restack = !git machete traverse --fetch --no-push-untracked --yes
+[advice]
+	macheteEditorSelection = false
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path =
+[mergetool "sourcetree"]
+	cmd = /Users/marc.kelsey/Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[machete]
+	squashMergeDetection = exact
+[includeIf "gitdir:/Users/marc.kelsey/code/github.com/Enflick/"]
+	path = ~/.gitconfig-textnow

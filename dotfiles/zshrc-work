@@ -103,9 +103,10 @@ source $ZSH/oh-my-zsh.sh
 export LESS=-FRX
 alias vi="nvim"
 
+# NOW USING RIPGREP
 # make a useful search command from grep
-export GREP_COLOR=31
-alias gr="grep -I -n -r --colour" # ignore binary files, show line numbers, search recursively, colour results
+# export GREP_COLOR=31
+# alias gr="grep -I -n -r --colour" # ignore binary files, show line numbers, search recursively, colour results
 
 # show withokta profiles
 alias withokta-profiles="cat ~/.okta/.config/profiles | grep '\['"
@@ -118,6 +119,9 @@ alias npmlinks="npm ls -g --depth=0 --link=true"
 
 # alias for IDE
 alias c="cursor"
+
+# alias for my git-can-delete script
+alias gcd="git-can-delete"
 
 # thefuck
 eval $(thefuck --alias)
@@ -138,7 +142,9 @@ PATH="/usr/local/opt/mysql-client/bin:$PATH"
 PATH="./vendor/bin:$PATH"
 
 # update $PATH for textnow-mono development
-PATH=$GOPATH/bin:$PATH
+# GOPATH is not exported anywhere, so fall back to the Go default (~/go); this is
+# where `go install` drops binaries like sql-migrate and golangci-lint.
+PATH="${GOPATH:-$HOME/go}/bin:$PATH"
 
 # ... and export it.
 export PATH
@@ -157,6 +163,9 @@ eval "$(mise activate zsh)"
 # starship
 eval "$(starship init zsh)"
 
+# ripgrep
+export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
+
 # cursor cli
 export PATH="$HOME/.local/bin:$PATH"
 
@@ -169,5 +178,32 @@ _git-can-delete() {
 
 compdef _git-can-delete git-can-delete
 
-# Added by Antigravity
-export PATH="/Users/marc.kelsey/.antigravity/antigravity/bin:$PATH"
+# tnw helper for creating worktrees
+eval "$(tnw shell-init)"
+
+# pnpm
+export PNPM_HOME="/Users/marc.kelsey/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+oktaaws() {
+    okta-aws-cli web --profile default "$@"
+}
+
+# a simple function to list all the worktrees in a repo,
+# then show you the list in an interactive picker (fzf),
+# then cd to the one you pick
+gwcd() {
+  local dir
+  dir=$(git worktree list --porcelain | grep '^worktree ' | cut -d' ' -f2- | fzf)
+  [ -n "$dir" ] && cd "$dir"
+}
+
+# GTM feature-branch workflow: create PRs targeting kp-gtm by default.
+# Use plain `gh pr create` for anything that legitimately goes to develop.
+gtmpr() {
+  gh pr create --base kp-gtm "$@"
+}

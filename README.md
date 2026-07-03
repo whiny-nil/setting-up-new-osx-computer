@@ -16,8 +16,18 @@
 - go through all of your work repos, make sure your work / branches are pushed
 - think about all the stuff you use, including:
   - things installed via brew (check with `brew list` or `history | grep "brew install"`)
+  - things installed globally via npm
   - things installed in /Applications
-  - you can list these and redirect them to a file, then copy that onto your USB stick
+  - Rather than doing this by hand, dump everything to a single file you can copy to your USB stick (and hand to Claude/an agent later to help update this README):
+
+    ```bash
+    {
+      echo "=== BREW LEAVES (top-level formulae) ==="; brew leaves 2>/dev/null
+      echo; echo "=== BREW CASKS ==="; brew list --cask 2>/dev/null
+      echo; echo "=== NPM GLOBALS ==="; npm ls -g --depth=0 2>/dev/null
+      echo; echo "=== APPLICATIONS ==="; ls /Applications
+    } > _inventory.txt
+    ```
 
 ## Setting up your new computer
 
@@ -138,6 +148,23 @@
   - neovim (I really should configure it at some point...)
   - kdiff3
   - noTunes (then set to "Open at Login" in System Settings)
+  - gh (GitHub CLI — after install, run `gh auth login`)
+  - git-machete (manage stacks of branches)
+  - ripgrep (fast recursive search, `rg`)
+    - copy `dotfiles/ripgreprc` to `~/.ripgreprc`
+    - it's activated by the `RIPGREP_CONFIG_PATH` env var (already set in `~/.zshrc`):
+
+      ```bash
+      export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
+      ```
+
+      current contents (`dotfiles/ripgreprc`):
+
+      ```
+      --no-ignore
+      --hidden
+      --glob=!.git/
+      ```
 
 - set up locate db
   - `sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist`
@@ -159,6 +186,11 @@
   - git clone git@github.com:whiny-nil/obsidian.git
   - open Obsidian, it should work
 
+- Install Zed (secondary editor)
+  - `brew install --cask zed`
+  - install the `zed` command for the terminal
+  - set font to "FantasqueSansM Nerd Font"
+
 - Change where screenshots are saved
   - `defaults write com.apple.screencapture location /Users/marc/__GTD__/__Inbox__`
 
@@ -166,6 +198,33 @@
   - cmd-up to show all the windows, then click on + button on the right side
   - Keyboard > Shortcuts > Mission Control: Expand "Mission Control" item in list, check the options to move between spaces with ctrl-1, etc
   - add some backgrounds
+
+## Agentic coding
+
+- Install the Claude desktop app
+  - `brew install --cask claude`
+  - sign in
+
+- `brew install` agentic coding helpers:
+  - herdr (helps with agentic coding)
+  - hunk (helps with agentic coding)
+
+- Wire up the shared agent config (the `ai` repo)
+  - all my agent config lives in one repo: `~/code/github.com/whiny-nil/ai`
+  - `~/.agents` is a symlink to that repo
+  - each tool's agent dir is in turn symlinked to `~/.agents` (or a subdir of it), so every agent shares the same skills/config from the `ai` repo. For example:
+
+    ```bash
+    # the ai repo is the single source of truth
+    ln -s ~/code/github.com/whiny-nil/ai ~/.agents
+
+    # then point each agent's config dir at ~/.agents, e.g.:
+    # ln -s ~/.agents ~/.claude
+    # ln -s ~/.agents/skills ~/.config/<agent>/skills
+    ```
+
+    <!-- TODO: confirm the exact per-agent symlink targets on the current machine -->
+  - after cloning `ai` and recreating the symlinks, every agent (Claude, Cursor, etc.) picks up the shared skills/config automatically
 
 ## For Me:
 
@@ -194,7 +253,8 @@
 - go to outlook.office.com/calendar, pin it
 
 - install some apps, as you need them:
-  - Docker.app
+  - Docker Desktop — `brew install --cask docker-desktop` (installs Docker.app)
+  - Linear.app
   - LibreOffice.app
   - VirtualBox.app
   - draw.io.app
